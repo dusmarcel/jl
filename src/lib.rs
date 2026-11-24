@@ -1,2 +1,2 @@
 mod jlc;
-pub use crate::jlc::JLC;
+pub use jlc::JLC;
