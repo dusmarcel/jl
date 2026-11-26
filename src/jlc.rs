@@ -4,13 +4,13 @@ pub struct JLC {
     user: String,
     password: String,
     host: String,
-    port: String,
+    port: u32,
     ssl: bool,
     client: Client
 }
 
 impl JLC {
-    pub fn new(user: String, password: String, host: String, port: String, ssl: bool) -> Self {
+    pub fn new(user: String, password: String, host: String, port: u32, ssl: bool) -> Self {
         JLC {
             user,
             password,
