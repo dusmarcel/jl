@@ -22,10 +22,11 @@ impl JLC {
     }
 
     pub async fn execute(&self) -> Result<Response, reqwest::Error> {
+        let port = self.port.to_string();
         let url = if self.ssl {
-            format!("https://{}:{}", self.host, self.port)
+            format!("https://{}:{}", self.host, port)
         } else {
-            format!("http://{}:{}", self.host, self.port)
+            format!("http://{}:{}", self.host, port)
         };
 
         self.client.get(format!("{url}/j-lawyer-io/rest/v1/cases/list"))
